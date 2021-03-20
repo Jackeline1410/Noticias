@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Formulario.module.css';
+import PropTypes from 'prop-types';
 import useSelect from '../hooks/useSelect';
 
 const Formulario = ({guardarCategoria}) => {
-
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
@@ -35,7 +35,7 @@ const Formulario = ({guardarCategoria}) => {
                         
                         <SelectNoticias />
 
-                    <div className="input-field cold s12">
+                    <div className="input-field col s12">
                         <input 
                             type="submit"
                             className={`${styles['btn_block']} btn-large amber darken-2`}
@@ -47,5 +47,8 @@ const Formulario = ({guardarCategoria}) => {
         </div>
      );
 }
- 
+
+Formulario.propTypes ={
+    guardarCategoria: PropTypes.func.isRequired
+}
 export default Formulario;
